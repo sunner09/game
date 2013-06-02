@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0D7F8694-45D4-4561-B381-D76B869B6F38}</ProjectGuid>
+    <ProjectName>gopher</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\Classes;$(SolutionDir)\$(SolutionName)\Library\cocos2dx;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\include;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\kazmath\include;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\platform\win32;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\platform\third_party\win32;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)\$(SolutionName)\Library\CocosDenshion\include;$(SolutionDir)\$(SolutionName)\Library\extensions;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\platform;$(SolutionDir)\$(SolutionName)\Library\external;$(SolutionDir)\$(SolutionName)\Library\scripting\lua\cocos2dx_support;$(SolutionDir)\$(SolutionName)\Library\scripting\lua\lua;$(SolutionDir)\$(SolutionName)\Library\scripting\lua\tolua;$(SolutionDir)\$(SolutionName)\Library\scripting\lua\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcocos2d.lib;opengl32.lib;glew32.lib;libCocosDenshion.lib;libExtensions.lib;libBox2D.lib;liblua.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>herofight.h</HeaderFileName>
+      <InterfaceIdentifierFileName>herofight_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>herofight_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/herofight.tlb</TypeLibraryName>
+      <DllDataFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\Classes;$(SolutionDir)\$(SolutionName)\Library\cocos2dx;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\include;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\kazmath\include;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\platform\win32;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\platform\third_party\win32;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)\$(SolutionName)\Library\CocosDenshion\include;$(SolutionDir)\$(SolutionName)\Library\extensions;$(SolutionDir)\$(SolutionName)\Library\cocos2dx\platform;$(SolutionDir)\$(SolutionName)\Library\CSArmature;$(SolutionDir)\$(SolutionName)\Library\CSArmature\animation;$(SolutionDir)\$(SolutionName)\Library\CSArmature\datas;$(SolutionDir)\$(SolutionName)\Library\CSArmature\display;$(SolutionDir)\$(SolutionName)\Library\CSArmature\external_tool;$(SolutionDir)\$(SolutionName)\Library\CSArmature\utils;$(SolutionDir)\$(SolutionName)\Library\CSArmature\physics;$(SolutionDir)\$(SolutionName)\Library\CSArmature\external_tool\Json;$(SolutionDir)\$(SolutionName)\Library\CSArmature\external_tool\Json\json;$(SolutionDir)\$(SolutionName)\Library\CSArmature\external_tool\Json\lib_json;$(SolutionDir)\$(SolutionName)\Library\CSArmature\external_tool\tinyxml;$(SolutionDir)\$(SolutionName)\Library\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ExceptionHandling />
+      <DebugInformationFormat />
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGSNDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcocos2d.lib;opengl32.lib;glew32.lib;libCocosDenshion.lib;libExtensions.lib;libBox2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>herofight.h</HeaderFileName>
+      <InterfaceIdentifierFileName>herofight_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>herofight_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/herofight.tlb</TypeLibraryName>
+      <DllDataFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\Defines.h" />
+    <ClInclude Include="..\Classes\GetLuaData.h" />
+    <ClInclude Include="..\Classes\LayerFight.h" />
+    <ClInclude Include="..\Classes\LayerLogin.h" />
+    <ClInclude Include="..\Classes\SceneFight.h" />
+    <ClInclude Include="..\Classes\SceneLogin.h" />
+    <ClInclude Include="main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\GetLuaData.cpp" />
+    <ClCompile Include="..\Classes\LayerFight.cpp" />
+    <ClCompile Include="..\Classes\LayerLogin.cpp" />
+    <ClCompile Include="..\Classes\SceneFight.cpp" />
+    <ClCompile Include="..\Classes\SceneLogin.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
